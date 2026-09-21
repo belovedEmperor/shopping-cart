@@ -7,13 +7,13 @@ export default function Bar() {
       <nav></nav>
       <ul>
         <li>
-          <Link>Home</Link>
+          <Link to="/">Home</Link>
         </li>
         <li>
-          <Link>Shop</Link>
+          <Link to="/shop">Shop</Link>
         </li>
         <li>
-          <Link>Cart</Link>
+          <Link to="/cart">Cart</Link>
         </li>
       </ul>
     </div>

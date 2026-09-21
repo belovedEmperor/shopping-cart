@@ -1,10 +1,24 @@
+import { useEffect, useState } from "react";
 import "./App.css";
-import Home from "./components/pages/Home";
+import { Outlet } from "react-router";
+import Bar from "./components/Bar";
 
 function App() {
+  const [products, setProducts] = useState([]);
+  const [cartItems, setCartItems] = useState([]);
+
+  useEffect(() => {
+    fetch("https://fakestoreapi.com/products")
+      .then((response) => response.json())
+      .then((data) => setProducts(data));
+  }, []);
+
+  console.log(products);
+
   return (
     <>
-      <Home />
+      <Bar />
+      <Outlet context={{ products, cartItems, setCartItems }} />
     </>
   );
 }

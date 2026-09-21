@@ -1,9 +1,6 @@
-import Bar from "../Bar";
-
 export default function Home() {
   return (
     <>
-      <Bar />
       <div class="container">
         <h1>We Will Scam You!</h1>
         <h2>Have you ever wanted to be scammed? Well now you can!</h2>

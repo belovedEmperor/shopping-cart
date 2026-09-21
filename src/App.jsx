@@ -17,7 +17,7 @@ function App() {
 
   return (
     <>
-      <Bar />
+      <Bar cartItems={cartItems} />
       <Outlet context={{ products, cartItems, setCartItems }} />
     </>
   );

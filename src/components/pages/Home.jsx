@@ -17,7 +17,7 @@ export default function Home() {
           At We Will Scam You!, we pride ourselves on our top-notch scam
           technology.
           <br />
-          How does that work you say? Money laundering!
+          Buy our stuff!
         </p>
         <small>
           We Will Scam You! LLC takes no responsibility for any financial loss

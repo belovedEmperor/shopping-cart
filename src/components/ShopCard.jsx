@@ -35,7 +35,7 @@ function CartForm({ product, quantity, setQuantity, cartItems, setCartItems }) {
       setCartItems(
         cartItems.map((item) =>
           item.id === product.id
-            ? { ...item, quantity: item.quantity + quantityNumber }
+            ? { ...item, quantity: Number(item.quantity) + quantityNumber }
             : item,
         ),
       );
@@ -53,10 +53,10 @@ function CartForm({ product, quantity, setQuantity, cartItems, setCartItems }) {
         onChange={(event) => setQuantity(event.target.value)}
       />
       <div>
-        <input type="button" onClick={incrementQuantity} />
-        <input type="button" onClick={decrementQuantity} />
+        <input type="button" value="+" onClick={incrementQuantity} />
+        <input type="button" value="-" onClick={decrementQuantity} />
       </div>
-      <input type="button" onClick={addToCart} />
+      <input type="button" value="Add To Cart" onClick={addToCart} />
     </form>
   );
 }

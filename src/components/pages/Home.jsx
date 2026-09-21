@@ -1,4 +1,4 @@
-import Bar from "./components/Bar";
+import Bar from "../Bar";
 
 export default function Home() {
   return (

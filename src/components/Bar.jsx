@@ -3,7 +3,7 @@ import { Link } from "react-router";
 export default function Bar() {
   return (
     <div>
-      <svg></svg>
+      <h1>We Will Scam You!</h1>
       <nav>
         <ul>
           <li>

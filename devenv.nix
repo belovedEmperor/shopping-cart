@@ -1,0 +1,3 @@
+{...}: {
+  languages.javascript.enable = true;
+}

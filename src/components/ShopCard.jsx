@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Card({ product, cartItems, setCartItems }) {
+export default function ShopCard({ product, cartItems, setCartItems }) {
   const [quantity, setQuantity] = useState(1);
 
   return (

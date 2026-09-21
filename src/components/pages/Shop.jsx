@@ -1,5 +1,5 @@
 import { useOutletContext } from "react-router";
-import Card from "../Card";
+import ShopCard from "../ShopCard";
 
 export default function Shop() {
   const { products, cartItems, setCartItems } = useOutletContext();
@@ -13,7 +13,7 @@ export default function Shop() {
         <ul>
           {products.map((product) => {
             return (
-              <Card
+              <ShopCard
                 product={product}
                 cartItems={cartItems}
                 setCartItems={setCartItems}

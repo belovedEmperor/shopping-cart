@@ -52,7 +52,7 @@ function CartForm({ cartItem, cartItems, setCartItems }) {
         <input type="button" value="-" onClick={decrementQuantity} />
       </div>
 
-      <input type="button" value="X" onClick={deleteItem} />
+      <input type="button" value="X" onClick={() => deleteItem(cartItem)} />
     </form>
   );
 }

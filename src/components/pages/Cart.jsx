@@ -14,7 +14,7 @@ export default function Cart() {
   }, 0);
 
   return (
-    <div className="container">
+    <div id="cart" className="container">
       <h1>Cart</h1>
 
       {cartItems.length <= 0 ? (
@@ -23,13 +23,15 @@ export default function Cart() {
         <ul>
           {cartItems.map((cartItem) => {
             return (
-              <CartCard
-                cartItem={cartItem}
-                products={products}
-                cartItems={cartItems}
-                setCartItems={setCartItems}
-                key={cartItem.id}
-              />
+              <li>
+                <CartCard
+                  cartItem={cartItem}
+                  products={products}
+                  cartItems={cartItems}
+                  setCartItems={setCartItems}
+                  key={cartItem.id}
+                />
+              </li>
             );
           })}
         </ul>

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Outlet } from "react-router";
 import Bar from "./components/Bar";
+import "./styles/styles.css";
 
 function App() {
   const [products, setProducts] = useState([]);

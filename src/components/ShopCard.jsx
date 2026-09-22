@@ -4,12 +4,12 @@ export default function ShopCard({ product, cartItems, setCartItems }) {
   const [quantity, setQuantity] = useState(1);
 
   return (
-    <div className="card">
+    <>
       <img src={product.image} alt={product.title} />
-      <div className="product-info">
+      <div className="productInfo">
         <span>{product.title}</span>
-        <span>{product.rating.rate}</span>
-        <span>{product.price}</span>
+        <span>⭐{product.rating.rate}</span>
+        <span>${product.price}</span>
       </div>
       <CartForm
         product={product}
@@ -18,7 +18,7 @@ export default function ShopCard({ product, cartItems, setCartItems }) {
         cartItems={cartItems}
         setCartItems={setCartItems}
       />
-    </div>
+    </>
   );
 }
 

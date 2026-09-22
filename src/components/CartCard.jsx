@@ -7,7 +7,7 @@ export default function CartCard({
   const product = products.find((product) => product.id === cartItem.id) ?? {};
 
   return (
-    <div className="card">
+    <>
       <img src={product.image} alt={product.title} />
       <div className="product-info">
         <span>{product.title}</span>
@@ -19,7 +19,7 @@ export default function CartCard({
         cartItems={cartItems}
         setCartItems={setCartItems}
       />
-    </div>
+    </>
   );
 }
 

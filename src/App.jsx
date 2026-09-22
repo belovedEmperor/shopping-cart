@@ -13,8 +13,6 @@ function App() {
       .then((data) => setProducts(data));
   }, []);
 
-  console.log(products);
-
   return (
     <>
       <Bar cartItems={cartItems} />

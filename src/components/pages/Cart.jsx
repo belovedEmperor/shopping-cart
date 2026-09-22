@@ -8,6 +8,11 @@ export default function Cart() {
     alert("HAH! Get scammed!");
   };
 
+  const total = cartItems.reduce((total, item) => {
+    const product = products.find((product) => product.id === item.id);
+    return total + (product.price ?? 0) * (Number(item.quantity) || 0);
+  }, 0);
+
   return (
     <div className="container">
       <h1>Cart</h1>
@@ -30,10 +35,7 @@ export default function Cart() {
         </ul>
       )}
 
-      <p>
-        Total: $
-        {cartItems.reduce((total, item) => total + item.quantity, 0).toFixed(2)}
-      </p>
+      <p>Total: ${total.toFixed(2)}</p>
       <input type="button" value="Get Scammed" onClick={getScammed} />
     </div>
   );

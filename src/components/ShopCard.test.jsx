@@ -80,4 +80,27 @@ describe("shop card & form", () => {
     expect(cartItems.length).toBe(2);
     expect(cartItems[0]).toEqual({ id: 1, quantity: 8 });
   });
+
+  it("uses quantity typed by hand", async () => {
+    cartItems = [];
+    renderShopCard();
+    const user = userEvent.setup();
+
+    await user.clear(screen.getByRole("textbox"));
+    await user.type(screen.getByRole("textbox"), "3");
+    await user.click(screen.getByRole("button", { name: "Add To Cart" }));
+
+    expect(cartItems).toEqual([{ id: 1, quantity: 3 }]);
+  });
+
+  it("keeps quantity at 1 when decrementing below", async () => {
+    renderShopCard();
+    const user = userEvent.setup();
+
+    await user.clear(screen.getByRole("textbox"));
+    await user.type(screen.getByRole("textbox"), "0");
+    await user.click(screen.getByRole("button", { name: "-" }));
+
+    expect(screen.getByRole("textbox").value).toBe("1");
+  });
 });

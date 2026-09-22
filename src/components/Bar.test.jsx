@@ -33,4 +33,14 @@ describe("Bar", () => {
     renderBar();
     expect(screen.getByRole("link", { name: /Cart/ })).toBeInTheDocument();
   });
+
+  it("shows total quantity in cart link", () => {
+    render(
+      <MemoryRouter>
+        <Bar cartItems={[{ id: 1, quantity: 6 }, { id: 2, quantity: "x" }]} />
+      </MemoryRouter>,
+    );
+
+    expect(screen.getByRole("link", { name: /Cart\s*6/ })).toBeInTheDocument();
+  });
 });

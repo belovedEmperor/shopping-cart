@@ -10,7 +10,7 @@ export default function Cart() {
 
   const total = cartItems.reduce((total, item) => {
     const product = products.find((product) => product.id === item.id);
-    return total + (product.price ?? 0) * (Number(item.quantity) || 0);
+    return total + (product?.price ?? 0) * (Number(item.quantity) || 0);
   }, 0);
 
   return (

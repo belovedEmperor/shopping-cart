@@ -4,7 +4,7 @@ export default function CartCard({
   cartItems,
   setCartItems,
 }) {
-  const product = products.find((product) => product.id === cartItem.id);
+  const product = products.find((product) => product.id === cartItem.id) ?? {};
 
   return (
     <div className="card">

@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 
-export default function Bar({ cartItems }) {
+export default function Bar({ cartItems = [] }) {
   const cartItemCount = cartItems.reduce(
     (itemCount, item) => itemCount + (Number(item.quantity) || 0),
     0,

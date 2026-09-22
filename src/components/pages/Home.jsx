@@ -1,7 +1,7 @@
 export default function Home() {
   return (
     <>
-      <div class="container">
+      <div className="container">
         <h1>We Will Scam You!</h1>
         <h2>Have you ever wanted to be scammed? Well now you can!</h2>
         <hr />

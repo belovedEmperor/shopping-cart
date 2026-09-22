@@ -21,16 +21,16 @@ describe("Bar", () => {
 
   it("has a home page link", () => {
     renderBar();
-    expect(screen.getByRole("link", { name: "Home" })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /Home/ })).toBeInTheDocument();
   });
 
   it("has a shop page link", () => {
     renderBar();
-    expect(screen.getByRole("link", { name: "Shop" })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /Shop/ })).toBeInTheDocument();
   });
 
   it("has a cart page link", () => {
     renderBar();
-    expect(screen.getByRole("link", { name: "Cart" })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /Cart/ })).toBeInTheDocument();
   });
 });

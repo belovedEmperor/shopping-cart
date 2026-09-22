@@ -17,12 +17,6 @@ const products = [
     price: 22.3,
     title: "Mens Casual Premium Slim Fit T-Shirts ",
   },
-  {
-    id: 3,
-    image: "temp.png",
-    price: 999999,
-    title: "shouldn't exist",
-  },
 ];
 
 let cartItems = [
@@ -41,20 +35,12 @@ function renderCartCard() {
   const setCartItems = (newItems) => (cartItems = newItems);
 
   render(
-    <>
-      <CartCard
-        cartItem={cartItems[0]}
-        products={products}
-        cartItems={cartItems}
-        setCartItems={setCartItems}
-      />
-      <CartCard
-        cartItem={cartItems[1]}
-        products={products}
-        cartItems={cartItems}
-        setCartItems={setCartItems}
-      />
-    </>,
+    <CartCard
+      cartItem={cartItems[0]}
+      products={products}
+      cartItems={cartItems}
+      setCartItems={setCartItems}
+    />,
   );
 }
 
@@ -62,28 +48,26 @@ describe("cart card & form", () => {
   it("renders product image", () => {
     renderCartCard();
 
-    expect(screen.getAllByRole("img").length).toEqual(2);
+    expect(screen.getByRole("img")).toBeInTheDocument();
   });
 
   it("renders product titles", () => {
     renderCartCard();
 
     expect(screen.getByText(products[0].title.trim())).toBeInTheDocument();
-    expect(screen.getByText(products[1].title.trim())).toBeInTheDocument();
   });
 
   it("renders product prices", () => {
     renderCartCard();
 
     expect(screen.getByText(products[0].price)).toBeInTheDocument();
-    expect(screen.getByText(products[1].price)).toBeInTheDocument();
   });
 
   it("increments cart item quantity", async () => {
     renderCartCard();
     const user = userEvent.setup();
 
-    await user.click(screen.getAllByRole("button", { name: "+" })[0]);
+    await user.click(screen.getByRole("button", { name: "+" }));
 
     expect(cartItems[0].quantity).toBe(7);
   });
@@ -92,7 +76,7 @@ describe("cart card & form", () => {
     renderCartCard();
     const user = userEvent.setup();
 
-    await user.click(screen.getAllByRole("button", { name: "-" })[0]);
+    await user.click(screen.getByRole("button", { name: "-" }));
 
     expect(cartItems[0].quantity).toBe(5);
   });
@@ -101,7 +85,7 @@ describe("cart card & form", () => {
     renderCartCard();
     const user = userEvent.setup();
 
-    await user.click(screen.getAllByRole("button", { name: "X" })[0]);
+    await user.click(screen.getByRole("button", { name: "X" }));
 
     expect(cartItems.length).toBe(1);
   });

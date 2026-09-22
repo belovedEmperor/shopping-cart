@@ -31,7 +31,8 @@ export default function Cart() {
       )}
 
       <p>
-        Total: ${cartItems.reduce((total, item) => total + item, 0).toFixed(2)}
+        Total: $
+        {cartItems.reduce((total, item) => total + item.quantity, 0).toFixed(2)}
       </p>
       <input type="button" value="Get Scammed" onClick={getScammed} />
     </div>
